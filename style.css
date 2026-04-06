@@ -63,6 +63,8 @@ h1 {
     border: 1px solid #444;
     margin-bottom: 10px;
 
+    }
+
     .fire-section {
     margin-top: 50px;
     display: flex;
@@ -127,14 +129,77 @@ h1 {
     animation: glitchBlink 0.7s infinite;
 }
 
-.scam-btn:hover {
-    background-color: darkred;
-    transform: scale(1.1);
+.scam-btn {
+    background-color: #ff0000; /* pure bright red */
+    color: white;
+    border: 3px solid #990000;
+    padding: 15px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+
+    /* THIS is what makes it pop */
+    box-shadow: 
+        0 0 10px #ff0000,
+        0 0 20px #ff0000,
+        0 0 40px #ff0000;
+
+    animation: glitchBlink 0.7s infinite;
 }
+
+.scam-btn:hover {
+    background-color: #ff1a1a;
+    transform: scale(1.15);
+    box-shadow: 
+        0 0 20px #ff0000,
+        0 0 40px #ff0000,
+        0 0 80px #ff0000;
+      }   
 
 @keyframes glitchBlink {
     0% { opacity: 1; }
     50% { opacity: 0.4; }
     100% { opacity: 1; }
+
 }
+
+.watermark {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    pointer-events: none;
+    z-index: 999;
+
+    animation: dvdBounce 8s linear infinite;
+}
+
+.watermark img {
+    width: 100px;
+}
+
+@keyframes dvdBounce {
+    0%   { transform: translate(0, 0); }
+    25%  { transform: translate(calc(100vw - 100px), 0); }
+    50%  { transform: translate(calc(100vw - 100px), calc(100vh - 100px)); }
+    75%  { transform: translate(0, calc(100vh - 100px)); }
+    100% { transform: translate(0, 0); }
+}
+
+body {
+    overflow: hidden;
+}
+
+.corner-image {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+
+    z-index: 1000;
+}
+
+.corner-image img {
+    width: 200px;   /* not too big */
+    height: auto;
 }
