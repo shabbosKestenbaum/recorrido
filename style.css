@@ -261,3 +261,29 @@ body {
     transform: scale(1.1);
     box-shadow: 0 0 20px red;
 }
+
+.chaos {
+    position: relative;
+    height: 2000px; /* big scrollable chaos area */
+}
+
+/* base image style */
+.chaos-img {
+    position: absolute;
+    object-fit: cover;
+    border: 2px solid #222;
+}
+
+/* different sizes */
+.small { width: 100px; }
+.medium { width: 180px; }
+.large { width: 300px; }
+.weird { width: 220px; transform: rotate(15deg); }
+
+/* random positions (manually tweak these) */
+.chaos-img:nth-child(1) { top: 50px; left: 30px; }
+.chaos-img:nth-child(2) { top: 300px; left: 200px; }
+.chaos-img:nth-child(3) { top: 600px; left: 50px; }
+.chaos-img:nth-child(4) { top: 900px; left: 300px; }
+.chaos-img:nth-child(5) { top: 1200px; left: 100px; }
+.chaos-img:nth-child(6) { top: 1500px; left: 250px; }
