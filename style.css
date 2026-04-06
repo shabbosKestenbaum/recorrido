@@ -188,7 +188,8 @@ h1 {
 }
 
 body {
-    overflow: hidden;
+    overflow-x: hidden; /* prevents sideways scroll */
+    overflow-y: auto;   /* allows vertical scroll */
 }
 
 .corner-image {
@@ -202,4 +203,38 @@ body {
 .corner-image img {
     width: 200px;   /* not too big */
     height: auto;
+}
+
+.character-container {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+}
+
+.character-image img {
+    width: 300px; /* big character image */
+    border: 2px solid #550000;
+    box-shadow: 0 0 15px red;
+    flex-shrink: 0;
+}
+
+.character-info {
+    flex: 1;
+    min-width: 0; /* THIS is the key fix */
+}
+
+.ability {
+    background-color: #111;
+    border: 1px solid #333;
+    margin-bottom: 15px;
+    padding: 10px;
+}
+
+.ability p {
+    word-wrap: break-word;
+}
+
+.ability h2 {
+    color: #ff0000;
+    font-size: 16px;
 }
